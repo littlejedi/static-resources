@@ -15,21 +15,21 @@ server:
     - type: http
       port: 8004
     - type: https
-      port: 8444
+      port: 8666
       keyStorePath: example.keystore
       keyStorePassword: example
       validateCerts: false
 # this requires the npn-boot library on the JVM's boot classpath
 #    - type: spdy3
-#      port: 8445
+#      port: 8665
 #      keyStorePath: example.keystore
 #      keyStorePassword: example
 #      validateCerts: false
   adminConnectors:
     - type: http
-      port: 8481
+      port: 8681
     - type: https
-      port: 8482
+      port: 8682
       keyStorePath: example.keystore
       keyStorePassword: example
       validateCerts: false

@@ -45,16 +45,31 @@
 #registration-form-school-type-select-bar {
 	margin-top: 5px;
 	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+#registration-form-country-select-bar {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+#registration-form-subregion-select-bar {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 12px;
 }
 
 #registration-form-city-select-bar {
 	margin-top: 5px;
 	margin-bottom: 5px;
+	font-size: 12px;
 }
 
 #registration-form-province-state-select-bar {
 	margin-top: 5px;
 	margin-bottom: 5px;
+	font-size: 12px;
 }
 
 #schoolSelector {

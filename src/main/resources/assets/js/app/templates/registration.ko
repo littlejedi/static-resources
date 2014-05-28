@@ -1,10 +1,11 @@
 <div id="registrationDiv" class="registration-div">
    <div id="registrationTitle" class="registration-title">注册</div>
-   <form class="form-horizontal registration-form">
+   <!-- note that the form action refers to the actual controller in UI -->
+   <form id="registrationForm" action="register" method="post" class="form-horizontal registration-form">
       <div class="form-group">
          <label for="inputUsername" class="col-sm-3 control-label">用户名</label>
          <div class="col-sm-8">
-            <input type="text" class="form-control" id="inputUsername" placeholder="用户名" data-bind="value: username">
+            <input type="text" name="username" class="form-control" id="inputUsername" placeholder="用户名" data-bind="value: username">
             <!-- ko if: usernameError() -->
             <label for="inputUsername" class="registration-form-error" data-bind="text:usernameError()"></label>
             <!-- /ko -->
@@ -13,7 +14,7 @@
       <div class="form-group">
          <label for="inputEmail" class="col-sm-3 control-label">电子邮箱</label>
          <div class="col-sm-8">
-            <input type="email" class="form-control" id="inputEmail" placeholder="电子邮箱地址" data-bind="value: email">
+            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="电子邮箱地址" data-bind="value: email">
             <!-- ko if: emailError() -->
             <label for="inputEmail" class="registration-form-error" data-bind="text:emailError()"></label>
             <!-- /ko -->
@@ -22,7 +23,7 @@
       <div class="form-group">
          <label for="inputPassword" class="col-sm-3 control-label">密码</label>
          <div class="col-sm-8">
-            <input type="password" class="form-control" id="inputPassword" placeholder="输入密码(密码最少包含6个字符, 并且包含至少1个数字和1个字母)" data-bind="value: password, hasFocus: isPasswordFocus">
+            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="密码最少包含6个字符, 并且包含至少1个数字和1个字母" data-bind="value: password">
             <!-- ko if: passwordError() -->
             <label for="inputPassword" class="registration-form-error" data-bind="text:passwordError()"></label>
             <!-- /ko -->
@@ -31,42 +32,62 @@
       <div class="form-group">
          <label for="inputConfirmPassword" class="col-sm-3 control-label">确认密码</label>
          <div class="col-sm-8">
-            <input type="password" class="form-control" id="inputConfirmPassword" placeholder="再次输入密码" data-bind="value: cpassword">
+            <input type="password" name="cpassword" class="form-control" id="inputConfirmPassword" placeholder="再次输入密码" data-bind="value: cpassword">
             <!-- ko if: cpasswordError() -->
             <label for="inputConfirmPassword" class="registration-form-error" data-bind="text:cpasswordError()"></label>
             <!-- /ko -->
          </div>
       </div>
       <div class="form-group">
+         <label for="paypassword" class="col-sm-3 control-label">支付密码</label>
+         <div class="col-sm-8">
+            <input type="password" name="paypassword" class="form-control" id="paypassword" placeholder="密码最少包含6个字符, 并且包含至少1个数字和1个字母" data-bind="value: paypassword">
+            <!-- ko if: passwordError() -->
+            <label for="paypassword" class="registration-form-error" data-bind="text:paypasswordError()"></label>
+            <!-- /ko -->
+         </div>
+      </div>
+      <div class="form-group">
+         <label for="cpaypassword" class="col-sm-3 control-label">确认支付密码</label>
+         <div class="col-sm-8">
+            <input type="password" name="cpaypassword" class="form-control" id="cpaypassword" placeholder="密码最少包含6个字符, 并且包含至少1个数字和1个字母" data-bind="value: cpaypassword">
+            <!-- ko if: passwordError() -->
+            <label for="cpaypassword" class="registration-form-error" data-bind="text:cpaypasswordError()"></label>
+            <!-- /ko -->
+         </div>
+      </div>
+      <div class="form-group">
+         <input type="hidden" name="schoolType" id="schoolTypeInput" data-bind="value: selectedSchoolType"></input>
          <label class="col-sm-3 control-label">当前所在学校</label>
          <div class="col-sm-8">
             <div id="schoolTypeList">
                <ul class="pagination registration-form-school-select-bar" id="registration-form-school-type-select-bar">
-                  <li><a href="#">初中</a></li>
-                  <li><a href="#">高中</a></li>
+                  <li data-bind="css:{'active':selectedSchoolType() == 'MIDDLE_SCHOOL'}"><a href="#" data-bind="click:selectMiddleSchool">初中</a></li>
+                  <li data-bind="css:{'active':selectedSchoolType() == 'HIGH_SCHOOL'}"><a href="#" data-bind="click:selectHighSchool, css:{'active':selectedSchoolType() == 3}">高中</a></li>
                </ul>
             </div>
-            <div id="cityList">
-               <ul class="pagination registration-form-city-select-bar" id="registration-form-city-select-bar">
-                  <li><a href="#">上海市</a></li>
+            <div id="countrySelector" data-bind="visible: countryList()">
+               <ul class="pagination registration-form-country-select-bar" id="registration-form-country-select-bar" data-bind="foreach: countryList">
+                 <li data-bind="css:{'active':$root.selectedCountry() && $root.selectedCountry().id == id}"><a href="#" data-bind="click:$root.selectCountry"><span data-bind="text:name"></span></a>
                </ul>
             </div>
-            <div id="provinceOrStateList">
-               <ul class="pagination registration-form-province-state-select-bar" id="registration-form-province-state-select-bar">
-                  <li class="active"><a href="#">徐汇区</a></li>
-                  <li><a href="#">黄浦区</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
+            <div id="provinceOrStateList" data-bind="visible: provinceOrStates()">
+               <ul class="pagination registration-form-province-state-select-bar" id="registration-form-province-state-select-bar" data-bind="foreach: provinceOrStates">
+                  <li data-bind="css:{'active':$root.selectedProvinceOrState() && $root.selectedProvinceOrState().id == id}"><a href="#" data-bind="click:$root.selectStateOrProvince"><span data-bind="text:name"></span></a>
                </ul>
             </div>
-            <div id="schoolList">
-               <select class="form-control" id="schoolSelector">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+            <div id="cityList" data-bind="visible: cities()">
+               <ul class="pagination registration-form-city-select-bar" id="registration-form-city-select-bar" data-bind="foreach: cities">
+                  <li data-bind="css:{'active':$root.selectedCity() && $root.selectedCity().id == id}"><a href="#" data-bind="click:$root.selectCity"><span data-bind="text:name"></span></a>
+               </ul>
+            </div>
+            <div id="districtsList" data-bind="visible: districts()">
+               <ul class="pagination registration-form-city-select-bar" id="registration-form-city-select-bar" data-bind="foreach: districts">
+                  <li data-bind="css:{'active':$root.selectedDistrict() && $root.selectedDistrict().id == id}"><a href="#" data-bind="click:$root.selectDistrict"><span data-bind="text:name"></span></a>
+               </ul>
+            </div>
+            <div id="schoolList" data-bind="visible: schools()">
+               <select class="form-control" name="currentSchool" id="schoolSelector" data-bind="options: schools, optionsText: 'name', value: selectedSchool, optionsValue: 'id', optionsCaption: '选择你的学校'">
                </select>
             </div>
             </ul>
@@ -79,3 +100,10 @@
       </div>
    </form>
 </div>
+<script type="text/ko" id="subregionSelectorTemplate">
+  <li>
+    <a href="#"><span data-bind="text:name"></span></a>
+    <ul class="pagination registration-form-country-select-bar" id="registration-form-country-select-bar" data-bind="template: { name: 'subregionSelectorTemplate', foreach: subregions }">
+    </ul>
+  </li>
+</script>

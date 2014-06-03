@@ -66,8 +66,8 @@
                   <li data-bind="css:{'active':selectedSchoolType() == 'HIGH_SCHOOL'}"><a href="#" data-bind="click:selectHighSchool, css:{'active':selectedSchoolType() == 3}">高中</a></li>
                </ul>
             </div>
-            <div id="countrySelector" data-bind="visible: countryList()">
-               <ul class="pagination registration-form-country-select-bar" id="registration-form-country-select-bar" data-bind="foreach: countryList">
+            <div id="countrySelector" data-bind="visible: schoolsMapping()">
+               <ul class="pagination registration-form-country-select-bar" id="registration-form-country-select-bar" data-bind="foreach: schoolsMapping">
                  <li data-bind="css:{'active':$root.selectedCountry() && $root.selectedCountry().id == id}"><a href="#" data-bind="click:$root.selectCountry"><span data-bind="text:name"></span></a>
                </ul>
             </div>

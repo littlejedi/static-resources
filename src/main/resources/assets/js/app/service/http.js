@@ -8,7 +8,7 @@ define([
 	var getMiddleSchoolsMapping = function(successCb, failCb) {
 		$.ajax({
     		type:"GET",
-    		url:baseUrl + 'schools/middleschools/map';
+    		url:baseUrl + 'schools/middleschools/map'
     	})
     	.done(function (result, statusText, xhr) {
     		successCb(result, statusText, xhr);
@@ -19,10 +19,10 @@ define([
     	});
 	};
 	
-	var getMiddleSchoolList = function(successCb, failCb) {
+	var getMiddleSchoolsList = function(successCb, failCb) {
 		$.ajax({
     		type:"GET",
-    		url:baseUrl + 'schools/middleschools/list';
+    		url:baseUrl + 'schools/middleschools/list'
     	})
     	.done(function (result, statusText, xhr) {
     		successCb(result, statusText, xhr);
@@ -36,7 +36,7 @@ define([
 	var getHighSchoolsMapping = function(successCb, failCb) {
 		$.ajax({
     		type:"GET",
-    		url:baseUrl + 'schools/highschools/map';
+    		url:baseUrl + 'schools/highschools/map'
     	})
     	.done(function (result, statusText, xhr) {
     		successCb(result, statusText, xhr);
@@ -50,7 +50,7 @@ define([
 	var getHighSchoolsList = function(successCb, failCb) {
 		$.ajax({
     		type:"GET",
-    		url:baseUrl + 'schools/highschools/map';
+    		url:baseUrl + 'schools/highschools/map'
     	})
     	.done(function (result, statusText, xhr) {
     		successCb(result, statusText, xhr);

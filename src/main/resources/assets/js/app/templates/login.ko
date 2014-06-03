@@ -1,0 +1,22 @@
+<div id="loginModal" class="modal fade">
+  <div id="loginModalDialog" class="modal-dialog">
+     <!-- note that the form action refers to the actual controller in UI -->
+   <form id="loginForm" class="login-form" action="register" method="post">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div id="loginModalBody" class="modal-body">
+   <label for="inputUsername">用户名或电子邮箱</label>
+   <input type="text" name="username" id="inputUsername" placeholder="用户名">
+   <br>
+   <label for="inputPassword">密码</label>
+   <input type="password" name="password" id="inputPassword" placeholder="密码最少包含6个字符, 并且包含至少1个数字和1个字母">
+      </div>
+      <div id="loginModalFooter" class="modal-footer">
+        <button id="loginSubmitButton" type="submit" class="btn btn-primary">登录</button>
+      </div>
+    </div><!-- /.modal-content -->
+       </form>
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

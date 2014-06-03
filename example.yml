@@ -13,7 +13,7 @@ server:
 #  hardNofileLimit: 1000
   applicationConnectors:
     - type: http
-      port: 8114
+      port: 8004
     - type: https
       port: 8666
       keyStorePath: example.keystore

@@ -3,11 +3,19 @@ define([
         'underscore',
         'knockout',
         'app/viewmodel/middleSchoolList',
+        'app/service/http',
         'easing'
-], function($, _, ko, middleSchoolList) {	
+], function($, _, ko, middleSchoolList, http) {	
 	var appViewModel = function(options) {
+		/**
+		 * Municipal cities
+		 * 1 - Shanghai
+		 */
 		this.municipalCityMap = {1 : true};
 		
+		this.middleSchoolsMapping = {};
+		this.highSchoolsMapping = {};
+				
 		this.username = ko.observable();
 		this.email = ko.observable();
 		this.password = ko.observable();
@@ -15,7 +23,7 @@ define([
 		this.paypassword = ko.observable();
 		this.cpaypassword = ko.observable();
 		this.isPasswordFocus = ko.observable(false);
-		this.countryList = ko.observable();
+		this.schoolsMapping = ko.observable(null);
 		/**
 		 * 1 - elementary school
 		 * 2 - middle school
@@ -33,6 +41,21 @@ define([
 		this.cities = ko.observable(null);
 		this.districts = ko.observable(null);
 		this.schools = ko.observable(null);
+		
+		/**
+		 * Populate static data
+		 */
+		http.getMiddleSchoolsMapping(_.bind(function (result, statusText, xhr) {
+			this.middleSchoolsMapping = result;
+		}, this), function (result, statusText, xhr) {
+			console.log('error getting middle school mapping');
+		});
+		
+		http.getHighSchoolsMapping(_.bind(function (result, statusText, xhr) {
+			this.highSchoolsMapping = result;
+		}, this), function (result, statusText, xhr) {
+			console.log('error getting high school mapping');
+		});
 
 		this.passwordInfo = _.bind(function() {
 			return '密码应该包含至少6个字符，其中至少包含1个数字和1个字母';
@@ -121,13 +144,13 @@ define([
 		
 		this.selectMiddleSchool = _.bind(function() {
 			this.selectedSchoolType('MIDDLE_SCHOOL');
-			this.countryList(middleSchoolList.list);
+			this.schoolsMapping(this.middleSchoolsMapping.countries);
 			this.clearSelectedSubregions();
 		}, this);
 		
 		this.selectHighSchool = _.bind(function() {
 			this.selectedSchoolType('HIGH_SCHOOL');
-			this.countryList(null);
+			this.schoolsMapping(this.highSchoolsMapping.countries);
 			this.clearSelectedSubregions();
 		}, this);
 		
@@ -161,10 +184,6 @@ define([
 			if (district.schools) {
 				this.schools(district.schools);
 			}
-		}, this);
-		
-		this.test = ko.computed(function() {
-			var a = this.selectedSchool();
 		}, this);
 	};
 	

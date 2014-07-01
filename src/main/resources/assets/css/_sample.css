@@ -1,0 +1,64 @@
+/* CSS for the presentation panel */
+/* You may delete this */
+
+.options-toggle {
+    float: left;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    margin: 30px 0 0 -50px;
+    background-image: url(img/option-bg.png);
+    cursor: pointer;
+}
+
+.options-toggle i {
+    font-size: 20px;
+    line-height: 40px;
+    color: #fff;
+}
+
+.options-panel {
+    position: fixed;
+    top: 200px;
+	left:94%;
+    z-index: 999;
+    /*background-color: #818181;*/
+    /*opacity: 0.6;*/
+    /*background-image: url(img/option-bg.png);*/
+    width: 30px;
+    color: #fff;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+}
+
+.options-panel h4 {
+    margin-top: 0;
+}
+
+.options-panel p.italic {
+    font-style: italic;
+    color: #fff;
+}
+
+.options-hidden {
+    right: -220px;
+}
+
+.options-shown {
+    right: 0;
+}
+
+select {
+    width: 200px;
+}
+
+.pattern-sample {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px 10px 0;
+    cursor: pointer;
+}

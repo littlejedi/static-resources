@@ -1,0 +1,319 @@
+/**********************************************************************************************************************/
+/******************************************** Header Navigation Style 1 ***********************************************/
+/**********************************************************************************************************************/
+#first-nav-pill {
+    background-color: #F87912;
+}
+
+#first-nav-pill > ul > li:first-child {
+    border-top: 2px solid #F87912;
+    width: 100px;
+}
+
+#first-nav-pill > ul > li a:hover,
+#first-nav-pill > ul > li a:focus,
+#first-nav-pill > ul > li a:active,
+.dropdown-submenu:hover > a {
+    background-color: #F87912;
+    background-image: none;
+}
+
+#first-nav-pill .dropdown-submenu > a:after {
+    border-left-color: #F87912;
+}
+
+#second-nav-pill {
+    background-color: #FFCC00;
+}
+
+#second-nav-pill > ul > li:first-child {
+    border-top: 2px solid #ffcc00;
+    width: 100px;
+}
+
+#second-nav-pill > ul > li a:hover, #second-nav-pill > ul > li a:focus {
+    background-color: #FFCC00;
+    background-image: none;
+}
+
+#third-nav-pill {
+    background-color: #AADD00;
+}
+
+#third-nav-pill > ul > li:first-child {
+    border-top: 2px solid #AADD00;
+    width: 100px;
+}
+
+#third-nav-pill > ul > li > a:hover, #third-nav-pill > ul > li > a:focus {
+    background-color: #AADD00;
+    background-image: none;
+}
+
+#fourth-nav-pill {
+    background-color: #00CCCC;
+}
+
+#fourth-nav-pill > ul > li:first-child {
+    border-top: 2px solid #00CCCC;
+    width: 100px;
+}
+
+#fourth-nav-pill > ul > li > a:hover, #fourth-nav-pill > ul > li > a:focus {
+    background-color: #00CCCC;
+    background-image: none;
+}
+
+#fifth-nav-pill {
+    background-color: #666699;
+}
+
+#fifth-nav-pill > ul > li:first-child {
+    border-top: 2px solid #666699;
+    width: 100px;
+}
+
+#fifth-nav-pill > ul > li > a:hover, #fifth-nav-pill > ul > li > a:focus {
+    background-color: #666699;
+    background-image: none;
+}
+
+#sixth-nav-pill {
+    background-color: #FF3333;
+}
+
+/**********************************************************************************************************************/
+/******************************************** Header Navigation Style 2 ***********************************************/
+/**********************************************************************************************************************/
+.corporate-header #header-navigation ul li a:hover .nav-text {
+    color: #0088CC;
+}
+
+.corporate-header #header-navigation ul.dropdown-menu > li:first-child {
+    border-top: 2px solid #0088CC;
+}
+
+.corporate-header #header-navigation ul > li > ul > li a:hover {
+    background-color: #0088CC;
+}
+
+.nav-search .search-icon i {
+    background-color: #0088CC;
+    color: #fff;
+}
+
+
+/**********************************************************************************************************************/
+/**************************************************** Top Image *******************************************************/
+/**********************************************************************************************************************/
+#top-image {
+    height: 263px;
+}
+
+.top-image1 {
+    background: transparent url(../images/header-image.png) top left no-repeat;
+}
+
+.top-image2 {
+    background: transparent url(../images/header-image2.png) top left no-repeat;
+}
+
+.top-image3 {
+    background: transparent url(../images/header-image3.png) top left no-repeat;
+}
+
+.top-image4 {
+    background: transparent url(../images/header-image4.png) top left no-repeat;
+}
+
+
+/**********************************************************************************************************************/
+/*************************************************** Breadcrumbs ******************************************************/
+/**********************************************************************************************************************/
+#breadcrumbs a {
+    color: #0088CC;
+}
+
+.isotope-filter > ul > li {
+    background-color: #0088CC;
+}
+
+.isotope-filter > ul > li:hover {
+    color: #fff;
+    background-color: #0088CC;
+}
+
+input.search-box {
+    background: #0088CC;
+}
+
+
+/**********************************************************************************************************************/
+/*********************************************** Revolution Slider ****************************************************/
+/**********************************************************************************************************************/
+
+.rev-slider-wrapper{
+    position:relative;
+    visibility: hidden;
+    max-height:700px !important;
+    padding:0;
+    overflow:hidden;
+    width: auto !important;
+}
+
+.rev-slider{
+    max-height:700px !important;
+    width: 100% !important;
+    position:relative;
+    overflow:hidden;
+}
+
+.rev-slider .caption {
+    font-family: "open sans";
+    font-weight: lighter;
+    background-color: transparent;
+    background-image: none;
+    color: #000;
+}
+
+.rev-slider .video-caption iframe {
+    position: absolute;
+    top: 24px;
+    left: 110px;
+    border: 0;
+}
+
+.rev-slider .black-medium {
+    font-size: 48px;
+    color: #000;
+}
+
+.rev-slider .orange-big {
+    font-size: 100px;
+    color: #F87912;
+}
+
+.rev-slider .black-small {
+    font-size: 30px;
+    color: #000;
+}
+
+.rev-slider .green-big {
+    font-size: 75px;
+    color: #91C240;
+}
+
+.rev-slider .violet-big {
+    font-size: 100px;
+    color: #7676A3;
+}
+
+.rev-slider .blue-big {
+    font-size: 100px;
+    color: #1AD0D1;
+}
+
+/**********************************************************************************************************************/
+/***************************************************** Buttons ********************************************************/
+/**********************************************************************************************************************/
+.stylish-button, .stylish-button {
+    background-color: #0088CC;
+}
+
+.stylish-button-2 {
+    background-color: #F87912;
+}
+
+.buttons-404 a.stylish-button {
+    margin: 0 0 10px 0;
+}
+
+/**********************************************************************************************************************/
+/***************************************************** Services *******************************************************/
+/**********************************************************************************************************************/
+.service-box-1 {
+    background-color: #EE612C;
+}
+
+.service-box-2 {
+    background-color: #EF832B;
+}
+
+.service-box-3 {
+    background-color: #EEA32C;
+}
+
+.service-box-4 {
+    background-color: #EEBE2C;
+}
+
+/**********************************************************************************************************************/
+/****************************************** Standard Element Container ************************************************/
+/**********************************************************************************************************************/
+.standard-element-container-1 {
+    background: url(../images/element-bg-image1.png) top center no-repeat;
+}
+
+.standard-element-container-2 {
+    background: #F5F5F6 url(../images/element-bg-image2.png) top center no-repeat;
+}
+
+.standard-element-image {
+    margin-bottom: -75px;
+    margin-left: -70px
+}
+
+.element-image-center {
+    margin: 0 auto -75px !important;
+    max-width: 995px;
+
+}
+
+
+/**********************************************************************************************************************/
+/************************************************* Pricing Tables *****************************************************/
+/**********************************************************************************************************************/
+.pricing-table .stylish-button {
+    background-color: #777777;
+}
+
+.highlighted-table .stylish-button {
+    background-color: #7DBB18;
+}
+
+#header-navigation ul li {
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+}
+
+#header-navigation > ul > li:hover {
+    padding-top: 8px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+}
+
+
+/**********************************************************************************************************************/
+/****************************************************** Blog **********************************************************/
+/**********************************************************************************************************************/
+.post-title-icon {
+    color: #fff;
+    background-color: #7DBB18;
+}
+
+.post-info a {
+    color: /*#0088CC*/#7DBB18;
+}
+
+.post-list i {
+    color: #fff;
+    background-color: #0088CC;
+}
+
+.stylish-button input {
+    background-color: #0088CC;
+}

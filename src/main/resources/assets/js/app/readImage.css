@@ -1,0 +1,35 @@
+    .window {
+    position:relative;
+    min-height:200px;
+    min-width:200px;
+    }
+
+    .window .content {
+    position:relative;
+    width:auto;
+    height:auto;
+    -webkit-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -ms-box-sizing:content-box;
+    -o-box-sizing:content-box;
+    box-sizing:content-box;
+    }
+
+    .window-overlay {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0);
+      z-index: 1000;
+    }
+             
+    #superwindow .content {  
+    height: 100%;
+    width: 100%;      
+    }
+    #superwindow img {
+    height: 100%;
+    width: 100%;     
+    }

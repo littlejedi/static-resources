@@ -4,7 +4,7 @@
 var isHidden = false;
 
 jQuery('body').css({
-    backgroundImage: 'url(styles/patterns/tileable_wood_texture.png)'
+    backgroundImage: 'url(assets/css/patterns/tileable_wood_texture.png)'
 });
 
 jQuery('#layout-style option:first-child').attr('selected', true);

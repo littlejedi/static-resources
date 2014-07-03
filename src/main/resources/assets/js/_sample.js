@@ -3,10 +3,6 @@
 
 var isHidden = false;
 
-jQuery('body').css({
-    backgroundImage: 'url(assets/css/patterns/tileable_wood_texture.png)'
-});
-
 jQuery('#layout-style option:first-child').attr('selected', true);
 jQuery('#header-style option:first-child').attr('selected', true);
 jQuery('#header-type option:first-child').attr('selected', true);
